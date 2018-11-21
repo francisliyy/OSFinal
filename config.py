@@ -84,6 +84,8 @@ IMG_UPLOAD_FOLDER = basedir + '/app/static/uploads/'
 IMG_UPLOAD_URL = '/static/uploads/'
 # Setup image size default is (300, 200, True)
 #IMG_SIZE = (300, 200, True)
+CSV_FILE_FOLDER = basedir + '/app/static/csv'
+
 APP_NAME = "Operating System Final Project Group 3"
 # Theme configuration
 # these are located on static/appbuilder/css/themes
