@@ -4,7 +4,7 @@ $(function(){
 
 	var option = {
         title: {
-            text: 'Communication Inside 2 Groups of Docker cContainers',
+            text: 'Communication Inside 2 Groups of Docker Containers',
             top: 'bottom',
             left: 'right'
         },
