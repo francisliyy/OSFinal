@@ -61,11 +61,13 @@ $(function(){
 		  	type: 'GET',
 		  	contentType:'application/json',
 		  	data: JSON.stringify({}),
+		  	cache:false,
 		  	success:function(data){
 		  		console.log(data);
 		  		var nodes = [];
-		  		option.series[0].nodes=[];
+		  		option.series[0].data=[];
 		  		option.series[0].links=[];
+
 		  		for (let i = 0; i < data.length; i++)
 				{
 					if(!nodes.includes(data[i]['from_ip_address'])){
@@ -76,7 +78,7 @@ $(function(){
 					}	
 					option.series[0].links.push({source:data[i]['from_ip_address'],target:data[i]['to_ip_address'],value:data[i]['package_count'],label:{show:true,formatter:'{c}'}});		    
 				}
-				var j=0
+				var j=0;
 				for (let i = 0; i < nodes.length; i++){
 					if(nodes[i].match("^172.18")){
 						if(i%2==0){
@@ -93,12 +95,14 @@ $(function(){
 
 					}
 				}
+
+				
 				topoChart.setOption(option,true);
 
 		  	}
 		});	
 	 };
-
 	 loopgraph();
+	 setInterval(loopgraph,10000);
 
 });
